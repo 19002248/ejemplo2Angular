@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface AlumnosUtl{
-  nombre:string;
-  edad:number;
-}
+import { AlumnosUtl } from '../Interfaces/utl.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -35,14 +31,4 @@ export class MainPageComponent  {
     edad:0
   }
     
-  agregar(){
-    //console.log(this.alumnosUtl)
-    this.alumnosUtl.push(this.regAlum);
-    this.regAlum={
-      nombre:'',
-      edad:0
-    }
-  }
-
-
 }
