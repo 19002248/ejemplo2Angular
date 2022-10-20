@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumnosUtl } from '../Interfaces/utl.interface';
+import { UtlService } from '../service/utl.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,28 +8,16 @@ import { AlumnosUtl } from '../Interfaces/utl.interface';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent  {
-
-  alumnosUtl:AlumnosUtl[]=[
-  {
-    nombre:'Mario',
-    edad: 85,
-  },
-  {
-    nombre:'Giselle',
-    edad: 22,
-  },
-  {
-    nombre:'Leo',
-    edad: 22,
-  },
-  {
-    nombre:'Diana',
-    edad: 21,
-  },
-  ]
+  // el arreglo lo mandamos a servicio 
   regAlum:AlumnosUtl={
     nombre:'',
     edad:0
   }
-    
+
+  //aquí hacemos una inyección de un servicio
+  constructor(){}
+
+    // pasar parámetros del hijo al padre
+    //este método nos va a permitir agregarle al arreglo un elemento
+ 
 }

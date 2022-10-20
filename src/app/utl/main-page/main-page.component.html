@@ -5,11 +5,18 @@
     <div class="col">
         <!-- para pasar parámetros usamos el decorador input, 
         lo que está en corchetes -->
-        <app-alumnos [alumnosUtl]="alumnosUtl" >   </app-alumnos>
+        <app-alumnos ></app-alumnos>
     </div>
     <div class="col">
-        <!-- Necesitamos pasar las variables para ue funcione-->
-        <app-agregar [alumnosUtl]="alumnosUtl" [regAlum]="regAlum"></app-agregar>
+        <!-- Necesitamos pasar las variables para ue funcione
+            aqui se pasa el arreglo  e objeto, pero como el arreglo está en el main solo dejaremos el objeto
+            pero también queremos que lo guarde, necesitamos invocar un método
+            a este se le agrega un manejador de eventos $event-->
+            <!-- 
+            el noNA es un output que manda los objetos que recibe
+            del padre al hijo se usa Input y del hijo al padre se utiliza un output
+            -->
+        <app-agregar [regAlum]="regAlum"></app-agregar>
     </div>
 </tr>
 </table>
