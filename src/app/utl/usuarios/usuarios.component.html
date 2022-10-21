@@ -1,0 +1,22 @@
+<h1>Formulario</h1>
+<div>
+<form (submit)="guardarUsuario()" [formGroup]="form" >
+    <mat-form-field appearance="outline">
+        <mat-label > Nombre</mat-label>
+        <input formControlName="nombre" matInput>
+    </mat-form-field>
+</form>
+</div>
+<div>
+    <form (submit)="guardarUsuario()" [formGroup]="form" >
+        <mat-form-field appearance="outline">
+            <mat-label >Password</mat-label>
+            <input formControlName="password" matInput>
+        </mat-form-field>
+    </form>
+</div>
+
+<div>
+    <button mat-flat-button color="primary">Guardar</button>
+    <a mat-stroked-button>Cancelar</a>
+</div>
