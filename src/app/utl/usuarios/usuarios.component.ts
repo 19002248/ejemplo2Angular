@@ -11,7 +11,7 @@ export class UsuariosComponent implements OnInit {
   constructor(private formBuilder:FormBuilder) { }
 
     form = new FormGroup({
-    nombre: new FormControl('',[Validators.required]),
+    nombre: new FormControl('',[Validators.required, Validators.minLength(3)]),
     password: new FormControl('',[Validators.required]),
   });
   ngOnInit(): void {
@@ -19,11 +19,22 @@ export class UsuariosComponent implements OnInit {
   guardarUsuario(){
     console.log('Registro Guardado');
   }
-  obtenerError(){
+  obtenerErrorN(){
     var nom=this.form.get('nombre');
-    var pass=this.form.get('password');
     if(nom?.hasError('required')){
-      return 'El campo es requerido'
+      return 'El campo Nombre es requerido';
     }
+    if(nom?.hasError('minlength')){
+      return 'Ingresa más de 3 caracteres';
+    }
+    return '';
+  }
+
+  obtenerErrorP(){
+    var pass=this.form.get('password');
+    if(pass?.hasError('required')){
+      return 'El campo de Password es requerido';
+    }
+    return '';
   }
 }
